@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up GraalVM/JDK 11
-      uses: DeLaGuardo/setup-graalvm@2.0
+      uses: ayltai/setup-graalvm@v1
       with:
         java-version: 11
         graalvm-version: 20.1.0
