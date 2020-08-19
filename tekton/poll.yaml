@@ -4,7 +4,7 @@ metadata:
   name: quarkus-repository
 spec:
   url: https://github.com/R-Lam/rancher-demo.git
-  ref: qa-dev
+  ref: master
   frequency: 1m
   type: github # can also be gitlab
   pipelineRef:
@@ -13,17 +13,17 @@ spec:
     params:
     - name: sha
       expression: commit.sha
-    - name: repoUrl
+    - name: repoURL
       expression: repoURL
     resources:
     - name: repo
       resourceSpec:
         type: git
         params:
-        - name: url
-          value: \$(params.repoUrl)
         - name: revision
-          value: \$(params.repoSha)
+          value: $(params.sha)
+        - name: url
+          value: $(params.repoURL)
   auth:
     secretRef:
       name:  my-github-secret
