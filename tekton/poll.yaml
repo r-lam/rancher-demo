@@ -15,7 +15,7 @@ spec:
       expression: commit.sha
     - name: repoUrl
       expression: repoURL
-  resources:
+    resources:
     - name: repo
       resourceSpec:
         type: git
