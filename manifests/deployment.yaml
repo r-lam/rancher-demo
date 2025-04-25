@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: demo-quarkus
-    app.openshift.io/runtime: quarkus
   name: demo-quarkus
 spec:
   replicas: 1
@@ -15,8 +14,6 @@ spec:
       labels:
         app: demo-quarkus
         deploymentconfig: demo-quarkus
-      annotations:
-        openshift.io/generated-by: OpenShiftWebConsole
     spec:
       containers:
         - name: demo-quarkus
